@@ -5,7 +5,7 @@
   font-size: 16px;
   font-weight: normal;
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  color: $color-font;
+  color: $font;
 }
 
 html,
@@ -45,4 +45,9 @@ input[type="radio"] {
 
 :focus {
   outline: none;
+}
+
+// NOTE: https://router.vuejs.org/api/interfaces/routeroptions.html#linkactiveclass
+.router-link-active {
+  text-decoration: none;
 }

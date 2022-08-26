@@ -26,7 +26,6 @@
 
 .title {
   font-size: 2rem;
-  /* color: #fff; */
   margin: 0;
   padding: 0;
   padding-bottom: 3px;
