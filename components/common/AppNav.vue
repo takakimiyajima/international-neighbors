@@ -1,23 +1,19 @@
 <template>
   <header class="header wrapper">
-    <nuxt-link :to='`/`'>
-      <h1 class="title">
-        International family App
-      </h1>
-    </nuxt-link>
+    <NuxtLink to="/">
+      <h1 class="title">International family App</h1>
+    </NuxtLink>
   </header>
 </template>
 
-<script setup>
-</script>
-
-<style scoped>
+<style lang="scss" scoped>
 .header {
   padding: 20px 4% 20px;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background-color: grey;
+  background-color: $color-background;
   display: flex;
   align-items: center;
   z-index: 10;
@@ -30,7 +26,7 @@
 
 .title {
   font-size: 2rem;
-  color: #fff;
+  /* color: #fff; */
   margin: 0;
   padding: 0;
   padding-bottom: 3px;
