@@ -13,7 +13,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: $color-background;
+  background-color: $background;
   display: flex;
   align-items: center;
   z-index: 10;
