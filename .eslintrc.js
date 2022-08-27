@@ -5,7 +5,7 @@ module.exports = {
     node: true,
   },
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2021,
     sourceType: 'module',
     parser: '@typescript-eslint/parser',
   },
@@ -17,5 +17,6 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   rules: {
     'vue/script-setup-no-uses-vars': 'off',
+    'vue/script-setup-uses-vars': 'error',
   },
 }

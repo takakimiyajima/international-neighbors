@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
+    "@nuxtjs/supabase": "^0.1.23",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
     "@vue/eslint-config-standard": "^8.0.1",
