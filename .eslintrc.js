@@ -18,5 +18,6 @@ module.exports = {
   rules: {
     'vue/script-setup-no-uses-vars': 'off',
     'vue/script-setup-uses-vars': 'error',
+    'vue/multi-word-component-names': 'off',
   },
 }
