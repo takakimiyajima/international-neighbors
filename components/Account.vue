@@ -26,7 +26,7 @@
   </form>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 const supabaseClient = useSupabaseClient()
 
 const isLoading = ref(true)
@@ -57,7 +57,7 @@ const updateProfile = async () => {
       updated_at: new Date(),
     }
     const { error } = await supabaseClient.from('profiles').upsert(updates, {
-      returning: 'minimal', // Don't return the value after inserting
+      returning: 'minimal',
     })
     if (error) throw error
   } catch (error: any) {
