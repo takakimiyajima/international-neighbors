@@ -5,8 +5,8 @@
       <input id="email" type="text" :value="user?.email" disabled />
     </div>
     <div>
-      <label for="username">Username</label>
-      <input id="username" v-model="username" type="text" />
+      <label for="firstName">User first name</label>
+      <input id="firstName" v-model="firstName" type="text" />
     </div>
 
     <div>
@@ -30,7 +30,7 @@
 const supabaseClient = useSupabaseClient()
 
 const isLoading = ref(true)
-const username = ref('')
+const firstName = ref('')
 const avatarPath = ref('')
 
 isLoading.value = true
@@ -41,7 +41,7 @@ const { data } = await supabaseClient
   .eq('id', user.value?.id)
   .single()
 if (data) {
-  username.value = data.username
+  firstName.value = data.username
   avatarPath.value = data.avatar_url
 }
 isLoading.value = false
@@ -52,7 +52,7 @@ const updateProfile = async () => {
     const user = useUser()
     const updates = {
       id: user.value?.id,
-      username: username.value,
+      first_name: firstName.value,
       avatar_url: avatarPath.value,
       updated_at: new Date(),
     }
