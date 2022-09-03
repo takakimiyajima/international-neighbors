@@ -5,5 +5,9 @@
     "target": "es2017",
     "module": "es2022",
     "strictNullChecks": false,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   }
 }
