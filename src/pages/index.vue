@@ -5,7 +5,5 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <TopPage />
-  </div>
+  <TopPage />
 </template>

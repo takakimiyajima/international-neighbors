@@ -9,7 +9,7 @@ export default defineNuxtConfig({
           content: 'Enjoy to connect with your international neighbor',
         },
       ],
-      link: [{ rel: 'icon', href: '/favicon.png' }],
+      // link: [{ rel: 'icon', href: '/favicon.png' }],
     },
   },
   components: [
@@ -19,6 +19,9 @@ export default defineNuxtConfig({
     },
   ],
   srcDir: 'src/',
+  supabase: {
+    // Options
+  },
   typescript: {
     shim: false, // shimsファイル生成の無効化（VSCodeでVolarを使う場合はfalseにする）
     strict: true, // 型チェックを厳格化
