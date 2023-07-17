@@ -1,32 +1,28 @@
 {
   "name": "international-family",
-  "version": "0.0.1",
-  "author": "Takaki Miyajima",
   "private": true,
   "scripts": {
-    "dev": "PORT=3003 nuxi dev",
     "build": "nuxi build",
+    "dev": "nuxi dev",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
-    "lint": "eslint --ext .js,.ts,.vue --ignore-path .eslintignore .",
-    "lint:fix": "yarn lint --fix"
+    "postinstall": "nuxi prepare",
+    "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config-typescript": "^10.0.0",
-    "@nuxtjs/supabase": "^0.1.23",
-    "@typescript-eslint/eslint-plugin": "^5.35.1",
-    "@typescript-eslint/parser": "^5.35.1",
-    "@vue/eslint-config-standard": "^8.0.1",
-    "eslint": "^8.22.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-nuxt": "^3.2.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.4.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "nuxt": "^3.6.2",
-    "prettier": "^2.7.1",
-    "sass": "^1.54.5",
-    "typescript": "^4.7.4"
+    "@nuxt/devtools": "latest",
+    "@nuxt/types": "^2.17.1",
+    "@nuxt/typescript-build": "^3.0.1",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/supabase": "^0.3.8",
+    "@types/node": "^18.16.19",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "nuxt": "^3.6.3",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.6",
+    "vue-tsc": "^1.8.5"
   }
 }
