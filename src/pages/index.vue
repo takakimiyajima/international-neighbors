@@ -1,9 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+definePageMeta({
+  middleware: 'auth',
+})
+</script>
 
 <template>
   <div>
-    <h1>
-      Pages/index.vue
-    </h1>
+    <TopPage />
   </div>
 </template>
