@@ -1,3 +1,5 @@
+import vuetify from 'vite-plugin-vuetify'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
@@ -18,6 +20,15 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  css: ['vuetify/lib/styles/main.sass'],
+  build: {
+    transpile: ['vuetify'],
+  },
+  hooks: {
+    'vite:extendConfig': (config) => {
+      config.plugins!.push(vuetify())
+    },
+  },
   srcDir: 'src/',
   supabase: {
     // Options

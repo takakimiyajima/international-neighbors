@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <nav>こにナビゲーションバーを入れる</nav>
+  <VApp>
+    <BaseHeader />
     <slot />
-  </div>
+  </VApp>
 </template>
