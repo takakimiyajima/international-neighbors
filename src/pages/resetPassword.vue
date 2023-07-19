@@ -3,13 +3,13 @@ const router = useRouter()
 const { auth } = useSupabaseAuthClient()
 
 const loading = ref(false)
-const email = ref('')
+const password = ref('')
 
 const handleLogin = async () => {
   try {
     loading.value = true
-    const { error } = await auth.resetPasswordForEmail(email.value, {
-      redirectTo: '/',
+    const { error } = await auth.updateUser({
+      password: password.value,
     })
     if (error) throw error
     alert('Check your email for the login link!')
@@ -28,7 +28,11 @@ const handleLogin = async () => {
     <div class="">
       <h1 class="">Please type your email to send the link</h1>
       <div>
-        <input v-model="email" type="email" placeholder="Your email" />
+        <input
+          v-model="password"
+          type="password"
+          placeholder="Your new password"
+        />
       </div>
       <div>
         <input
@@ -37,7 +41,6 @@ const handleLogin = async () => {
           :disabled="loading"
         />
       </div>
-      <NuxtLink to="/resendPassword">Forget your password??</NuxtLink>
     </div>
   </form>
 </template>

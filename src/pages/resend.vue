@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const router = useRouter()
 const { auth } = useSupabaseAuthClient()
 
 const loading = ref(false)
@@ -8,12 +7,8 @@ const email = ref('')
 const handleLogin = async () => {
   try {
     loading.value = true
-    const { error } = await auth.resend({
-      type: 'email_change',
-      email: email.value,
-      // options: {
-      //   emailRedirectTo: '/resetPassword',
-      // },
+    const { error } = await auth.resetPasswordForEmail(email.value, {
+      redirectTo: 'http://localhost:3000/resetPassword',
     })
     if (error) throw error
     alert('Check your email for the login link!')
@@ -39,7 +34,6 @@ const handleLogin = async () => {
           :disabled="loading"
         />
       </div>
-      <NuxtLink to="/resendPassword">Forget your password??</NuxtLink>
     </div>
   </form>
 </template>
