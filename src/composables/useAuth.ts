@@ -1,10 +1,9 @@
 export const useAuth = () => {
   const user = useSupabaseUser()
   const { auth } = useSupabaseAuthClient()
-  const router = useRouter()
 
-  const email = ref('')
-  const password = ref('')
+  const email = ref('takaki.mz@gmail.com')
+  const password = ref('Drumsdrums1')
 
   const signInWithPassword = async () => {
     try {
@@ -48,10 +47,9 @@ export const useAuth = () => {
     }
   }
 
-  const signOut = () => {
-    console.log('2--------')
-    auth.signOut()
-    router.push('/signIn')
+  const signOut = async () => {
+    await auth.signOut()
+    await navigateTo('/signIn')
   }
 
   const clearPassword = () => {
