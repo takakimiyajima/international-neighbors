@@ -1,0 +1,71 @@
+export const useAuth = () => {
+  const user = useSupabaseUser()
+  const { auth } = useSupabaseAuthClient()
+  const router = useRouter()
+
+  const email = ref('')
+  const password = ref('')
+
+  const signInWithPassword = async () => {
+    try {
+      const { error } = await auth.signInWithPassword({
+        email: email.value,
+        password: password.value,
+      })
+      if (error) throw error
+
+      clearPassword()
+    } catch (error: any) {
+      alert(error.error_description || error.message)
+    }
+  }
+
+  const resetPasswordForEmail = async () => {
+    try {
+      const { error } = await auth.resetPasswordForEmail(email.value, {
+        redirectTo: 'http://localhost:3000/resetPassword',
+      })
+      if (error) throw error
+
+      alert('Check your email for the login link!')
+      clearPassword()
+    } catch (error: any) {
+      alert(error.error_description || error.message)
+    }
+  }
+
+  const updateUser = async () => {
+    try {
+      const { error } = await auth.updateUser({
+        password: password.value,
+      })
+      if (error) throw error
+
+      alert('Check your email for the login link!')
+      clearPassword()
+    } catch (error: any) {
+      alert(error.error_description || error.message)
+    }
+  }
+
+  const signOut = () => {
+    console.log('2--------')
+    auth.signOut()
+    router.push('/signIn')
+  }
+
+  const clearPassword = () => {
+    password.value = ''
+  }
+
+  return {
+    user,
+    email,
+    password,
+    signInWithPassword,
+    resetPasswordForEmail,
+    updateUser,
+    signOut,
+    clearPassword,
+  }
+}

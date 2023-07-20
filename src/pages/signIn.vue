@@ -1,25 +1,10 @@
 <script setup lang="ts">
-const user = useSupabaseUser()
-const { auth } = useSupabaseAuthClient()
+import { useAuth } from '@/composables/useAuth'
 
-const loading = ref(false)
-const email = ref('')
-const password = ref('')
+const { signInWithPassword, user, email, password } = useAuth()
 
 const handleLogin = async () => {
-  try {
-    loading.value = true
-    const { error } = await auth.signInWithPassword({
-      email: email.value,
-      password: password.value,
-    })
-    if (error) throw error
-    alert('Check your email for the login link!')
-  } catch (error: any) {
-    alert(error.error_description || error.message)
-  } finally {
-    loading.value = false
-  }
+  await signInWithPassword()
 }
 
 watchEffect(() => {
@@ -39,11 +24,7 @@ watchEffect(() => {
         <input v-model="password" type="password" placeholder="Your password" />
       </div>
       <div>
-        <input
-          type="submit"
-          :value="loading ? 'Loading' : 'SignIn'"
-          :disabled="loading"
-        />
+        <VBtn>SignIn!!</VBtn>
       </div>
       <NuxtLink to="/resend">Forget your password??</NuxtLink>
     </div>

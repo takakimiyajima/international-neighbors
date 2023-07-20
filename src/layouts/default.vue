@@ -1,6 +1,10 @@
 <template>
   <VApp>
     <BaseHeader />
-    <slot />
+    <VMain>
+      <VContainer>
+        <slot />
+      </VContainer>
+    </VMain>
   </VApp>
 </template>
