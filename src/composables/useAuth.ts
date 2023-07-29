@@ -2,8 +2,8 @@ export const useAuth = () => {
   const user = useSupabaseUser()
   const { auth } = useSupabaseAuthClient()
 
-  const email = ref('takaki.mz@gmail.com')
-  const password = ref('Drumsdrums1')
+  const email = ref('')
+  const password = ref('')
 
   const signInWithPassword = async () => {
     try {
