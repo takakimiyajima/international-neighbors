@@ -14,6 +14,9 @@ export default defineNuxtConfig({
       // link: [{ rel: 'icon', href: '/favicon.png' }],
     },
   },
+  build: {
+    transpile: ['vuetify'],
+  },
   components: [
     {
       path: '@/components',
@@ -21,22 +24,12 @@ export default defineNuxtConfig({
     },
   ],
   css: ['vuetify/lib/styles/main.sass'],
-  build: {
-    transpile: ['vuetify'],
-  },
+  devtools: { enabled: true },
+  debug: true,
   hooks: {
     'vite:extendConfig': (config) => {
       config.plugins!.push(vuetify())
     },
-  },
-  srcDir: 'src/',
-  supabase: {
-    // Options
-  },
-  typescript: {
-    shim: false, // shimsファイル生成の無効化（VSCodeでVolarを使う場合はfalseにする）
-    strict: true, // 型チェックを厳格化
-    typeCheck: false, // nuxt devまたはnuxt build時に型チェックを実行
   },
   modules: ['@nuxtjs/supabase'],
   runtimeConfig: {
@@ -45,5 +38,14 @@ export default defineNuxtConfig({
       // この中に書かれているものはクライアントサイドでも利用可能
     },
   },
-  devtools: { enabled: true },
+  srcDir: 'src/',
+  supabase: {
+    // Options
+  },
+  ssr: false,
+  typescript: {
+    shim: false, // shimsファイル生成の無効化（VSCodeでVolarを使う場合はfalseにする）
+    strict: true, // 型チェックを厳格化
+    typeCheck: false, // nuxt devまたはnuxt build時に型チェックを実行
+  },
 })
