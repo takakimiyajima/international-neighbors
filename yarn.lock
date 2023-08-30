@@ -8301,9 +8301,9 @@ vue@^3.3.4:
     "@vue/shared" "3.3.4"
 
 vuetify@^3.3.9:
-  version "3.3.14"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.3.14.tgz#623a816f903a8f86530e3d72246c4d6cc1cfda22"
-  integrity sha512-5kGnahj/cX5989bV9XM432k/BJ11fRdJ3CCdISjo1auCz+rLEeLJdjMeqyCJVd0FZsWcE1Z8799s9sLdLM3Deg==
+  version "3.3.15"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.3.15.tgz#54d3aa076082c62e0b3ef103636b85270a9aef39"
+  integrity sha512-n7GYBO31k8vA9UfvRwLNyBlkq1WoN3IJ9wNnIBFeV4axleSjFAzzR4WUw7rgj6Ba3q6N2hxXoyxJM21tseQTfQ==
 
 wait-on@^7.0.1:
   version "7.0.1"
