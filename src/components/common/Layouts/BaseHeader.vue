@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useAuth } from '@/composables/useAuth'
-
 const { user, signOut } = useAuth()
+// console.log("user")
+// console.log(user.value)
 </script>
 
 <template>
