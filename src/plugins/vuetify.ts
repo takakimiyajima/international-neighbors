@@ -14,7 +14,7 @@ const myCustomLightTheme = {
     warning: '#FB8C00',
     background: '#F5F5F5',
   },
-};
+}
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(
