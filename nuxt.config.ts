@@ -36,6 +36,10 @@ export default defineNuxtConfig({
     // サーバーサイドでのみ使用可能なキー
     public: {
       // この中に書かれているものはクライアントサイドでも利用可能
+      supabase: {
+        url: process.env.NUXT_PUBLIC_SUPABASE_URL,
+        key: process.env.NUXT_PUBLIC_SUPABASE_KEY,
+      },
     },
   },
   srcDir: 'src/',
