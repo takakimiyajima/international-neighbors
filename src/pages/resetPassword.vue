@@ -1,26 +1,26 @@
 <script setup lang="ts">
-const router = useRouter()
-const { auth } = useSupabaseAuthClient()
+  const router = useRouter()
+  const { auth } = useSupabaseAuthClient()
 
-const loading = ref(false)
-const password = ref('')
+  const loading = ref(false)
+  const password = ref('')
 
-const handleLogin = async () => {
-  try {
-    loading.value = true
-    const { error } = await auth.updateUser({
-      password: password.value,
-    })
-    if (error) throw error
-    alert('Check your email for the login link!')
+  const handleLogin = async () => {
+    try {
+      loading.value = true
+      const { error } = await auth.updateUser({
+        password: password.value,
+      })
+      if (error) throw error
+      alert('Check your email for the login link!')
 
-    router.push({ path: '/' })
-  } catch (error: any) {
-    alert(error.error_description || error.message)
-  } finally {
-    loading.value = false
+      router.push({ path: '/' })
+    } catch (error: any) {
+      alert(error.error_description || error.message)
+    } finally {
+      loading.value = false
+    }
   }
-}
 </script>
 
 <template>

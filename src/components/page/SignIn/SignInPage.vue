@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { signInWithPassword, user, email, password } = useAuth()
+  const { signInWithPassword, user, email, password } = useAuth()
 
-watchEffect(() => {
-  if (user.value) {
-    navigateTo('/')
-  }
-})
+  watchEffect(() => {
+    if (user.value) {
+      navigateTo('/')
+    }
+  })
 </script>
 
 <template>

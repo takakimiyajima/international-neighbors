@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { useAuth } from '@/composables/useAuth'
+  import { useAuth } from '@/composables/useAuth'
 
-const { resetPasswordForEmail, email } = useAuth()
+  const { resetPasswordForEmail, email } = useAuth()
 
-const loading = ref(false)
+  const loading = ref(false)
 
-const handleLogin = async () => {
-  await resetPasswordForEmail()
-}
+  const handleLogin = async () => {
+    await resetPasswordForEmail()
+  }
 </script>
 
 <template>

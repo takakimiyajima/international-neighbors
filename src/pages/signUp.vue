@@ -1,32 +1,32 @@
 <script setup lang="ts">
-const user = useSupabaseUser()
-const { auth } = useSupabaseAuthClient()
+  const user = useSupabaseUser()
+  const { auth } = useSupabaseAuthClient()
 
-const loading = ref(false)
-const email = ref('')
-const password = ref('')
+  const loading = ref(false)
+  const email = ref('')
+  const password = ref('')
 
-const handleLogin = async () => {
-  try {
-    loading.value = true
-    const { error } = await auth.signInWithPassword({
-      email: email.value,
-      password: password.value,
-    })
-    if (error) throw error
-    alert('Check your email for the login link!')
-  } catch (error: any) {
-    alert(error.error_description || error.message)
-  } finally {
-    loading.value = false
+  const handleLogin = async () => {
+    try {
+      loading.value = true
+      const { error } = await auth.signInWithPassword({
+        email: email.value,
+        password: password.value,
+      })
+      if (error) throw error
+      alert('Check your email for the login link!')
+    } catch (error: any) {
+      alert(error.error_description || error.message)
+    } finally {
+      loading.value = false
+    }
   }
-}
 
-watchEffect(() => {
-  if (user.value) {
-    navigateTo('/')
-  }
-})
+  watchEffect(() => {
+    if (user.value) {
+      navigateTo('/')
+    }
+  })
 </script>
 
 <template>
